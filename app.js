@@ -23,6 +23,8 @@ const userSchema = new mongoose.Schema({
 const secret = "Thisisthesecret";
 userSchema.plugin(encrypt,{secret: secret, encryptedFields:["password"]});
 
+const User = new mongoose.model("User",userSchema);
+
 app.get('/',(req,res) => {
     res.render("home");
 })
@@ -34,6 +36,25 @@ app.get('/login', (req,res) => {
 app.get('/register', (req,res) => {
     res.render("register");
 })
+
+app.get('/teaching', (req,res) => {
+    res.render("teaching");
+})
+
+// register an user and render teaching home page if successfull
+app.post("/register",(req,res) => {
+    const newUser = new User({
+        email: req.body.username,
+        password: req.body.password
+    })
+
+    newUser.save();
+    res.redirect("teaching");
+});
+
+
+
+
 
 app.listen(port,() => {
     console.log('App listening on port',port)
