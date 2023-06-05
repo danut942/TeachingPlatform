@@ -52,7 +52,20 @@ app.post("/register",(req,res) => {
     res.redirect("teaching");
 });
 
+// check for an existing user and login
+app.post("/login",(req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
 
+    async function runFindUser(){
+        const foundUser = await User.findOne({email:username});
+
+        if(foundUser.password === password){
+            res.render("teaching");
+        }
+    }
+    runFindUser().catch(console.dir);
+});
 
 
 
