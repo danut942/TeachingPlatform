@@ -8,7 +8,7 @@ app.set('view engine','ejs');
 
 
 app.get('/',(req,res) => {
-    res.send('Hello World');
+    res.send('Teaching Home Page');
 })
 
 app.get('/login', (req,res) => {
