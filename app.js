@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser")
 const ejs = require("ejs");
-const mongoose = req
+const mongoose = require("mongoose");
 
 const app = express();
 const port = 3000;
@@ -20,11 +20,15 @@ const userSchema = new mongoose.Schema({
 });
 
 app.get('/',(req,res) => {
-    res.send('Teaching Home Page');
+    res.send('home');
 })
 
 app.get('/login', (req,res) => {
     res.render("login");
+})
+
+app.get('/register', (req,res) => {
+    res.render("register");
 })
 
 app.listen(port,() => {
