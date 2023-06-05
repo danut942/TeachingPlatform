@@ -1,0 +1,22 @@
+{
+  "name": "teachingplatform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danut942/TeachingPlatform.git"
+  },
+  "author": "Danut Sacu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danut942/TeachingPlatform/issues"
+  },
+  "homepage": "https://github.com/danut942/TeachingPlatform#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
