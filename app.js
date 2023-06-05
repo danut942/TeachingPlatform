@@ -26,7 +26,7 @@ userSchema.plugin(encrypt,{secret: secret, encryptedFields:["password"]});
 const User = new mongoose.model("User",userSchema);
 
 app.get('/',(req,res) => {
-    res.render("home");
+    res.render("teaching");
 })
 
 app.get('/login', (req,res) => {
@@ -37,8 +37,8 @@ app.get('/register', (req,res) => {
     res.render("register");
 })
 
-app.get('/teaching', (req,res) => {
-    res.render("teaching");
+app.get('/home', (req,res) => {
+    res.render("home");
 })
 
 // register an user and render teaching home page if successfull
@@ -49,7 +49,7 @@ app.post("/register",(req,res) => {
     })
 
     newUser.save();
-    res.redirect("teaching");
+    res.redirect("home");
 });
 
 // check for an existing user and login
@@ -61,7 +61,7 @@ app.post("/login",(req,res) => {
         const foundUser = await User.findOne({email:username});
 
         if(foundUser.password === password){
-            res.render("teaching");
+            res.render("home");
         }
     }
     runFindUser().catch(console.dir);
