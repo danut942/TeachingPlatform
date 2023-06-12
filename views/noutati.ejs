@@ -1,0 +1,98 @@
+<%- include('partials/header') %>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logoUsv.png" width="50" height="50" alt="Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/noutati">Noutati</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cursuri">Cursuri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!---------------------------------------- Newsfeed noutati -->
+    <div class="card" style="width: 48rem">
+        <div class="border border-left border-right px-0">
+            <div class="p-3 border-bottom">
+                <h4 class="d-flex align-items-center mb-0">
+                    Noutati
+                </h4>
+            </div>
+            <div>
+
+                <!---------------------------------------- Make a post request for a new feed -->
+                <form action="/noutati" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                        <textarea class="form-control" name="message" rows="3" placeholder="Example textarea"></textarea>
+                      </div>
+                    <button type="submit" class="btn btn-primary btn-rounded">Postati</button>
+                </form>
+                <!---------------------------------------- / Make a post request for a new feed -->
+
+                <div class="card shadow-0">
+                    <div class="card-body border-bottom pb-2">
+                        <div class="d-flex">
+                            <div class="d-flex align-items-center w-100 ps-3">
+                                <div class="w-100">
+                                    <input type="text" id="form143" class="form-control form-status border-0 py-1 px-0"
+                                        placeholder="Adaugati un anunt ..." />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-unstyled d-flex flex-row ps-3 pt-3" style="margin-left: 50px;">
+
+                            </ul>
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="btn btn-primary btn-rounded">Postati</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex p-3 border-bottom">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (29).webp" class="rounded-circle"
+                            height="50" alt="Avatar" loading="lazy" />
+                        <div class="d-flex w-100 ps-3">
+                            <div>
+                                <a href="">
+                                    <h6 class="text-body">
+                                        Miley Cyrus
+                                    </h6>
+                                </a>
+                                <p style="line-height: 1.2;">
+                                    Lorem ipsum dolor, sit amet adipisicing elit.
+                                    Nobis assumenda eveniet ipsum libero mollitia vero doloremque
+                                    molestiae omnis, quam iure dicta reprehenderit
+                                    distinctio facere labore atque, sit quo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------- / Newsfeed noutati -->
+
+
+    <%- include('partials/footer') %>
